@@ -80,5 +80,6 @@ for(let i=0;i<postButton.length;i++){
        let counter=document.getElementById(`like-counter-${library[i].id}`);
        library[i].likes++;
        counter.innerHTML=library[i].likes;
+       postButton[i].classList.toggle('like-button--liked')
     })
 }
