@@ -34,6 +34,7 @@ const postContainer = document.querySelector('.posts-list');
 function createPost (container , librayList){
     //ciclo for che scorre tutto l'array e dove ricavo i dati da mandare all'html
     for(let i=0 ;i<librayList.length ; i++){
+        //assegno a variabile post  valore nell'indice attuale nell arrary
         const post=librayList[i];
         container.innerHTML+=`
                 <div class="post">
@@ -55,19 +56,29 @@ function createPost (container , librayList){
                 <div class="post__footer">
                     <div class="likes js-likes">
                         <div class="likes__cta">
-                            <a class="like-button  js-like-button" href="#" data-postid="${post.id}">
+                            <a class="like-button  js-like-button" href="#${post.id}" data-postid="${post.id}">
                                 <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                                 <span class="like-button__label">Mi Piace</span>
                             </a>
                         </div>
                         <div class="likes__counter">
-                            Piace a <b id="like-counter-1" class="js-likes-counter">${post.likes}</b> persone
+                            Piace a <b id="like-counter-${post.id}" class="js-likes-counter">${post.likes}</b> persone
                         </div>
                     </div> 
                 </div>            
-            </div> `
-
+            </div> 
+        `
     }
 }
-
+//creo i post
 createPost(postContainer,library);
+//collego a tutti i bottoni
+let postButton = document.querySelectorAll('.like-button')
+//addeventlistener al like button
+for(let i=0;i<postButton.length;i++){
+    postButton[i].addEventListener('click',function(){
+       let counter=document.getElementById(`like-counter-${library[i].id}`);
+       library[i].likes++;
+       counter.innerHTML=library[i].likes;
+    })
+}
