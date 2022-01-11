@@ -82,13 +82,27 @@ for(let i=0;i<postButton.length;i++){
     postButton[i].addEventListener('click',function(){
         //dichiaro una variabile contatore che si attaccherà per id all'like counter con il relativo id
        let counter=document.getElementById(`like-counter-${library[i].id}`);
-       //incremento il valore likes degli oggetti
+       //incremento il valore likes degli oggetti ad ogni click del relativo pulsante 
        library[i].likes++;
        //modifico innerhtml di counter con nuovo valore incrementato sopra
        counter.innerHTML=library[i].likes;
-       //per ogni bottone aggiungo e tolgo ad ogni click (liked  button)
-       postButton[i].classList.toggle('like-button--liked')
-       //pusho nell' array creato sopra l'id dei post a cui ho messo mi piace
-       likeList.push(postButton[i].id);
+       //per ogni bottone aggiungo (liked  button)
+       postButton[i].classList.add('like-button--liked');
+       //per prevenire doppi valori
+       //se l'id del post cliccato non è presente nella lista dei piaciuti  
+       //quando clicchiamo avrò che 
+       if(likeList.includes(library[i].id)===false){
+           //allora i likes sono quelli incrementati - 2  quando non presente nella lista
+           library[i].likes=library[i].likes - 2;
+           //successivamente se non incluso e cliccato dovrà essere pushato
+           likeList.push(library[i].id);
+        }else{
+            //se clicciamo ed è già presente nella lista dei piaciuti  allora lo eliminiamo
+           likeList.pop(library[i].id);
+           //rimuoviamo pure il like 
+           postButton[i].classList.remove('like-button--liked');
+        }
+       
     })
+
 }
