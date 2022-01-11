@@ -2,7 +2,7 @@
 const library = [
     {
         id:1,
-        name:'Anonimo',
+        name:'Mario Rossi',
         photo:'https://unsplash.it/300/300?image=15',
         data:new Date().toLocaleDateString(),
         testo:'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
@@ -11,8 +11,8 @@ const library = [
     },
     {
         id:2,
-        name:'Anonimo2',
-        photo:'https://i.picsum.photos/id/96/300/300.jpg?hmac=El5Y-JrwVDoOqzkfDHD1AEZvyGBjFSdFei7hDzhnaEE',
+        name:'Elon mask',
+        photo:'https://eu.ui-avatars.com/api/?name=Elon+Musk',
         data:new Date().toLocaleDateString(),
         testo:'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
         image:'https://i.picsum.photos/id/969/300/300.jpg?hmac=qLL7hRFTPtaVajdo36mDSxKq3OwYm3wuDUu83PuHHzI',
@@ -20,7 +20,7 @@ const library = [
     },
     {
         id:3,
-        name:'Anonimo3',
+        name:'Giuseppe Verdi',
         photo:'https://i.picsum.photos/id/928/300/300.jpg?hmac=QWFJOwXiovf5nsBF_GT3zPKfE-W2vrteEo3m0NcfYCM',
         data:new Date().toLocaleDateString(),
         testo:'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
