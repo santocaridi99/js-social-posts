@@ -72,14 +72,23 @@ function createPost (container , librayList){
 }
 //creo i post
 createPost(postContainer,library);
-//collego a tutti i bottoni
+//collego a tutti i like botton
 let postButton = document.querySelectorAll('.like-button')
-//addeventlistener al like button
+//dichiaro array dove metterò id dei post che ho messo like
+let likeList=[];
+//rifaccio un for che andrà da 0 a array di postbutton che è la lista di tutti i bottoni
 for(let i=0;i<postButton.length;i++){
+    //per ogni bottone avrò un addEventlistener
     postButton[i].addEventListener('click',function(){
+        //dichiaro una variabile contatore che si attaccherà per id all'like counter con il relativo id
        let counter=document.getElementById(`like-counter-${library[i].id}`);
+       //incremento il valore likes degli oggetti
        library[i].likes++;
+       //modifico innerhtml di counter con nuovo valore incrementato sopra
        counter.innerHTML=library[i].likes;
+       //per ogni bottone aggiungo e tolgo ad ogni click (liked  button)
        postButton[i].classList.toggle('like-button--liked')
+       //pusho nell' array creato sopra l'id dei post a cui ho messo mi piace
+       likeList.push(postButton[i].id);
     })
 }
